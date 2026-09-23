@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duit Ku - Game Simulasi</title>
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS External -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="status-bar">
+                <span>Duit Ku Pay</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Aman 100% (Simulasi)</span>
+            </div>
+            
+            <div class="balance-section">
+                <div>
+                    <div class="balance-title">Saldo Duit Ku</div>
+                    <div class="balance-amount">
+                        <span id="saldo">Rp 999.999.999.999</span>
+                        <i class="fa-regular fa-eye-slash" id="toggleSaldo"></i>
+                    </div>
+                </div>
+                <div class="badge-cicil">
+                    <i class="fa-solid fa-wallet"></i> CICIL
+                </div>
+            </div>
+
+            <!-- Banner Promo -->
+            <div class="banner">
+                <div>
+                    <div class="banner-text">SKIN PIKACHU & SULTAN</div>
+                    <div class="banner-subtext">Klaim saldo simulasi tak terbatas!</div>
+                </div>
+                <button class="btn-claim" id="btnKlaim">KLAIM REZEKI</button>
+            </div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid">
+            <div class="menu-item btn-transfer-trigger">
+                <div class="menu-icon icon-blue">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <span>Transfer Halusinasi</span>
+            </div>
+            <div class="menu-item btn-transfer-trigger">
+                <div class="menu-icon icon-pink">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <span>Misi Skin</span>
+            </div>
+            <div class="menu-item btn-transfer-trigger">
+                <div class="menu-icon icon-teal">
+                    <i class="fa-brands fa-google-play"></i>
+                </div>
+                <span>Google Play</span>
+            </div>
+            <div class="menu-item btn-transfer-trigger">
+                <div class="menu-icon icon-orange">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <span>Pulsa & Data</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon icon-purple">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <span>A+ Rewards</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon icon-lightblue">
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                <span>Travel</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon icon-yellow">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <span>Affiliate</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon icon-grey">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <span>Lihat Semua</span>
+            </div>
+        </div>
+
+        <!-- Feed Section -->
+        <div class="feed-section">
+            <div class="feed-item">
+                <i class="fa-solid fa-circle-check feed-icon"></i>
+                <span>Feed: Saldo kamu tidak terbatas untuk pamer!</span>
+            </div>
+            <div class="feed-item">
+                <i class="fa-solid fa-heart feed-icon icon-red"></i>
+                <span>Feed: Sukses transfer Rp 1.000.000.000 ke Bank Halus</span>
+            </div>
+            <div class="feed-item">
+                <i class="fa-solid fa-bullhorn feed-icon"></i>
+                <span>Feed: Selamat, kamu jadi orang terkaya di simulasi ini!</span>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Beranda</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Aktivitas</span>
+            </div>
+            <div class="nav-pay btn-transfer-trigger">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Dompet</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Saya</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Transfer Game/Simulasi -->
+    <div class="modal" id="transferModal">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-paper-plane"></i> Transfer Simulasi</h3>
+            <p class="modal-sub">Kirim uang mainan ke siapa saja!</p>
+            <input type="text" id="tujuan" placeholder="Nama / Nomor Rekening Tujuan">
+            <input type="number" id="nominal" placeholder="Nominal Transfer (Rp)">
+            <input type="text" id="catatan" placeholder="Catatan (opsional)">
+            <button id="btnProsesTransfer">KIRIM SEKARANG</button>
+            <button class="btn-close" id="btnBatalTransfer">Batal</button>
+        </div>
+    </div>
+
+    <!-- Elemen Notifikasi Toast -->
+    <div class="toast" id="toastNotification">
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast-body">
+            <div class="toast-title" id="toastTitle">Transfer Berhasil</div>
+            <div class="toast-message" id="toastMessage">Berhasil kirim uang ke tujuan</div>
+        </div>
+    </div>
+
+    <!-- JavaScript External -->
+    <script src="script.js"></script>
+</body>
+</html>
+
